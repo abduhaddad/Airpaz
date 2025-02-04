@@ -7,8 +7,10 @@ export default function AddTodo() {
     const { addTodo } = useContext(TodoContext)!
 
     const handleAddTodo = () => {
-        addTodo(text)
-        setText('')
+        if(text.trim()) {
+            addTodo(text)
+            setText('')
+        }
     }
 
     return (
